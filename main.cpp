@@ -33,7 +33,7 @@ public:
             for (const Body &other : bodies) {
                 glm::vec2 to_other = other.position - current.position;
                 double distance2 = glm::length2(to_other);
-                if(distance2 < 0.01) {
+                if(distance2 < 0.0001) {
                     continue;
                 }
                 acceleration += glm::vec2(G * other.mass / distance2) * glm::normalize(to_other);
